@@ -23,45 +23,32 @@ class _RegisterState extends State<Register> {
   bool _isLoading = false;
 
   Future<void> _registerUser() async {
-    if (!_formKey.currentState!.validate()) {
-      print('Formulario no válido');
-      return;
-    }
+    if (!_formKey.currentState!.validate()) return;
 
     setState(() {
       _isLoading = true;
     });
 
-    try {
-      final success = await _userService.registerUser(
-        email: _emailController.text,
-        password: _passwordController.text,
-        name: _nameController.text,
-        lastName: _lastNameController.text,
-        phone: _phoneController.text,
-      );
+    final success = await _userService.registerUser(
+      name: _nameController.text,
+      lastName: _lastNameController.text,
+      phone: _phoneController.text,
+      email: _emailController.text,
+      password: _passwordController.text,
+    );
 
-      setState(() {
-        _isLoading = false;
-      });
+    setState(() {
+      _isLoading = false;
+    });
 
-      if (success) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Usuario registrado exitosamente')),
-        );
-        Navigator.pop(context); // Regresa a la pantalla anterior
-      } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Error al registrar usuario')),
-        );
-      }
-    } catch (e) {
-      setState(() {
-        _isLoading = false;
-      });
-      print('Error al registrar usuario: $e');
+    if (success) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: $e')),
+        const SnackBar(content: Text('Usuario registrado exitosamente')),
+      );
+      Navigator.pop(context); // Regresa a la pantalla anterior
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Error al registrar usuario')),
       );
     }
   }
