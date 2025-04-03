@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/screens/login.dart';
-import 'package:flutter_application_1/presentation/screens/main_menu.dart';
-import 'package:flutter_application_1/presentation/screens/order_detail_screen.dart';
-import 'package:flutter_application_1/presentation/screens/order_history_screen.dart';
-import 'package:flutter_application_1/presentation/screens/orders_screen.dart';
-import 'package:flutter_application_1/presentation/screens/products_list.dart';
-import 'package:flutter_application_1/presentation/screens/register.dart';
-import 'package:flutter_application_1/presentation/screens/profile.dart';
-import 'package:flutter_application_1/presentation/screens/admin_users.dart';
-import 'package:flutter_application_1/presentation/screens/user_list.dart';
+import 'package:flutter_application_1/features/auth/presentation/screens/login.dart';
+import 'package:flutter_application_1/features/auth/presentation/screens/main_menu.dart';
+import 'package:flutter_application_1/features/auth/presentation/screens/order_detail_screen.dart';
+import 'package:flutter_application_1/features/auth/presentation/screens/order_history_screen.dart';
+import 'package:flutter_application_1/features/auth/presentation/screens/orders_screen.dart';
+import 'package:flutter_application_1/features/auth/presentation/screens/products_list.dart';
+import 'package:flutter_application_1/features/auth/presentation/screens/register.dart';
+import 'package:flutter_application_1/features/auth/presentation/screens/profile.dart';
+import 'package:flutter_application_1/features/auth/presentation/screens/admin_users.dart';
+import 'package:flutter_application_1/features/auth/presentation/screens/user_list.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
